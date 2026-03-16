@@ -14,13 +14,13 @@ public class ServerMain {
 
             byte[] buffer = new byte[1024];
 
-            while(true){
+            while (true) {
 
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
 
                 socket.receive(packet);
 
-                String messaggio = new String(packet.getData(),0,packet.getLength());
+                String messaggio = new String(packet.getData(), 0, packet.getLength());
 
                 System.out.println("Ricevuto: " + messaggio);
 
@@ -35,10 +35,12 @@ public class ServerMain {
 
                 System.out.println("Messaggio rimandato");
             }
+        } catch (UnknownHostException e){
+            System.err.println("Server non trovato");
 
         } catch (Exception e) {
 
-            System.out.println("Errore nel server");
+            System.err.println("Errore nel server");
 
             e.printStackTrace();
 
