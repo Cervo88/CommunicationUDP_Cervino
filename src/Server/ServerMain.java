@@ -1,5 +1,6 @@
 package Server;
 
+import java.io.IOException;
 import java.net.*;
 
 public class ServerMain {
@@ -35,10 +36,15 @@ public class ServerMain {
 
                 System.out.println("Messaggio rimandato");
             }
-        } catch (UnknownHostException e){
+
+
+        } catch (UnknownHostException e) {
             System.err.println("Server non trovato");
 
-        } catch (Exception e) {
+        } catch(SocketException e) {
+            System.err.println("Errore");
+
+        } catch (IOException e) {
 
             System.err.println("Errore nel server");
 
