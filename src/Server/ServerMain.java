@@ -15,7 +15,7 @@ public class ServerMain {
 
             byte[] buffer = new byte[1024];
 
-            while (true) {
+            while(true) {
 
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
 
